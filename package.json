@@ -1,0 +1,16 @@
+{
+  "name": "kanban-local",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "Kanban local com API e banco SQLite para testes.",
+  "scripts": {
+    "start": "node server.mjs",
+    "dev": "node server.mjs",
+    "db:reset": "node db/reset.mjs",
+    "db:test": "node db/test.mjs"
+  },
+  "engines": {
+    "node": ">=22.5"
+  }
+}
