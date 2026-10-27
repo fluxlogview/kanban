@@ -1,6 +1,7 @@
 'use strict';
 
 const STORAGE_KEY = 'kanban-board-v1';
+const STATIC_HOST = /(^|\.)github\.io$/i.test(window.location.hostname);
 
 const COLUMNS = [
   { id: 'todo', label: 'A fazer', color: '#87909e' },
@@ -194,6 +195,7 @@ async function init() {
 }
 
 async function fetchRemoteState() {
+  if (STATIC_HOST) return null;
   if (!/^https?:$/.test(window.location.protocol)) return null;
 
   try {
